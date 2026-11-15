@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_OFFLINE_REVIEW",
+  "deployable": false,
+  "azure_deployment_enabled": false,
+  "sources": {
+    "config": {
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "commit": "7c3f4b0c9d5b899370f1c80d790ca1af8ffddd83",
+      "path": "environments/platform"
+    },
+    "chart": {
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "commit": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "path": "charts/otel-collector"
+    },
+    "values": {
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "commit": "b44af177bc8ff4c2af795b344f80676d4f4e640e"
+    }
+  },
+  "profiles": {
+    "dev": {
+      "cluster_name": "poc-offline-dev",
+      "namespace": "ai-observability",
+      "project": "projects/collector-dev.yaml",
+      "application": "applications/collector-dev.yaml",
+      "values": "environments/dev/collector.yaml",
+      "expected_chart_objects": 4
+    },
+    "qa": {
+      "cluster_name": "poc-offline-qa",
+      "namespace": "ai-observability",
+      "project": "projects/collector-qa.yaml",
+      "application": "applications/collector-qa.yaml",
+      "values": "environments/qa/collector.yaml",
+      "expected_chart_objects": 4
+    }
+  },
+  "config_prerequisite": "Config platform C must establish the namespace/network foundation before any later rollout; not applied or copied by this catalog.",
+  "remaining": [
+    "Jaeger/backend readiness and ephemeral profile",
+    "Application charts",
+    "Argo/control-plane networking and config GitOps ownership",
+    "Bootstrap freeze/adoption/rollback and full combined checks",
+    "Exact cluster/identity/TLS/PSA/runtime proof"
+  ]
+}

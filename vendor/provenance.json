@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "kind": "Application",
+      "path": "vendor/argocd/Application.json",
+      "sha256": "c8780ae894dee1b0bfa93a7737cbb1af0c11f3d553bc4b7d78379f36144c6f3a",
+      "upstream_url": "https://raw.githubusercontent.com/argoproj/argo-cd/94037c4d4e1af4bd0651d37a179fbd9e347e668c/manifests/crds/application-crd.yaml",
+      "upstream_sha256": "9fd0da3e7097ad6d1af614fabd5c960bc7ddb00d768c3ef485a2fda6e9460df8",
+      "upstream_commit": "94037c4d4e1af4bd0651d37a179fbd9e347e668c",
+      "version": "3.6.1",
+      "derivation": "v1alpha1 schema.openAPIV3Schema; sorted-key indented JSON plus LF; schema-only keyword checks, no CEL/admission execution"
+    },
+    {
+      "kind": "AppProject",
+      "path": "vendor/argocd/AppProject.json",
+      "sha256": "014198b3d37b6f141f72aac9f184ee90b478b972e20cde5d250cf8ef488e9ac5",
+      "upstream_url": "https://raw.githubusercontent.com/argoproj/argo-cd/94037c4d4e1af4bd0651d37a179fbd9e347e668c/manifests/crds/appproject-crd.yaml",
+      "upstream_sha256": "084150a2feccd188a1dee09cd8a3a259dfacecdfb7e10037df78900f60816482",
+      "upstream_commit": "94037c4d4e1af4bd0651d37a179fbd9e347e668c",
+      "version": "3.6.1",
+      "derivation": "v1alpha1 schema.openAPIV3Schema; sorted-key indented JSON plus LF; schema-only keyword checks, no CEL/admission execution"
+    }
+  ],
+  "license": "Apache-2.0",
+  "license_path": "vendor/LICENSE",
+  "license_sha256": "c996fc213c94f4a4a838407d355b081226caa7b103a4f239bb87fb8f1d8e3a60"
+}

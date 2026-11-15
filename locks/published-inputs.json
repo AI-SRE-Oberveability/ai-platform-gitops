@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "inputs": [
+    {
+      "role": "config",
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "commit": "7c3f4b0c9d5b899370f1c80d790ca1af8ffddd83",
+      "path": "vendor/manifest-lock.json",
+      "sha256": "a7d70a5ac4bdbec22a652c2deead18f8c6aacec9a25c521fe3cbbb8db95bf3fa"
+    },
+    {
+      "role": "chart",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "commit": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "path": "charts/otel-collector/Chart.yaml",
+      "sha256": "82bdbdfa3372e9dfa36224e9be4b90b72007bee09d8827a7d9d85938b902dd42"
+    },
+    {
+      "role": "chart",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "commit": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "path": "charts/otel-collector/values.yaml",
+      "sha256": "726ac6a94e7535708f4858feffaa729006af1b63c2a79ca1dfdbb8a4682dfd4e"
+    },
+    {
+      "role": "values",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "commit": "b44af177bc8ff4c2af795b344f80676d4f4e640e",
+      "path": "environments/dev/collector.yaml",
+      "sha256": "e4516479df9160421e9f99b4a27268f91f790b5584d107c7bf74034bbc2307a8"
+    },
+    {
+      "role": "values",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "commit": "b44af177bc8ff4c2af795b344f80676d4f4e640e",
+      "path": "environments/qa/collector.yaml",
+      "sha256": "7b61c635e4f34337b291d14954631441d650fd46006a3ce849453477f3bae62e"
+    }
+  ]
+}

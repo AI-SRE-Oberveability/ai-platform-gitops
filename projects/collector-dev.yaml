@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: collector-dev
+  namespace: argocd
+  annotations:
+    ai-lab.example/execution: offline-only
+spec:
+  description: Prepared offline Collector profile; no cluster registered
+  sourceRepos:
+  - https://github.com/AI-SRE-Oberveability/ai-observability-config.git
+  - https://github.com/AI-SRE-Oberveability/ai-platform-gitops.git
+  destinations:
+  - name: poc-offline-dev
+    namespace: ai-observability
+  clusterResourceWhitelist: []
+  namespaceResourceWhitelist:
+  - group: ''
+    kind: ServiceAccount
+  - group: ''
+    kind: ConfigMap
+  - group: ''
+    kind: Service
+  - group: apps
+    kind: Deployment
+  roles: []
+  orphanedResources:
+    warn: true

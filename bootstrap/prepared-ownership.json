@@ -1,0 +1,41 @@
+{
+  "state": "PREPARED",
+  "active_writers": [],
+  "bootstrap_execution_authorized": false,
+  "live_adoption_receipt": false,
+  "objects_per_profile": [
+    {
+      "group": "",
+      "kind": "ServiceAccount",
+      "namespace": "ai-observability",
+      "name": "otel-collector",
+      "source_role": "chart",
+      "intended_writer": "argo_after_separate_handover"
+    },
+    {
+      "group": "",
+      "kind": "ConfigMap",
+      "namespace": "ai-observability",
+      "name": "otel-collector",
+      "source_role": "chart",
+      "intended_writer": "argo_after_separate_handover"
+    },
+    {
+      "group": "",
+      "kind": "Service",
+      "namespace": "ai-observability",
+      "name": "otel-collector",
+      "source_role": "chart",
+      "intended_writer": "argo_after_separate_handover"
+    },
+    {
+      "group": "apps",
+      "kind": "Deployment",
+      "namespace": "ai-observability",
+      "name": "otel-collector",
+      "source_role": "chart",
+      "intended_writer": "argo_after_separate_handover"
+    }
+  ],
+  "limitations": "Partial Collector ledger only. Config prerequisites and future platform/application objects require full combined ownership/handover checks; no UID/readiness/freeze/adoption evidence exists."
+}
