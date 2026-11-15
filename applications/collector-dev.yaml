@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: collector-dev
+  namespace: argocd
+  annotations:
+    ai-lab.example/execution: offline-only
+spec:
+  project: collector-dev
+  destination:
+    name: poc-offline-dev
+    namespace: ai-observability
+  sources:
+  - repoURL: https://github.com/AI-SRE-Oberveability/ai-observability-config.git
+    targetRevision: 0ada65843b85d2d9083f7237190a9a1828d35dbc
+    path: charts/otel-collector
+    helm:
+      releaseName: otel-collector
+      skipCrds: true
+      valueFiles:
+      - $values/environments/dev/collector.yaml
+  - repoURL: https://github.com/AI-SRE-Oberveability/ai-platform-gitops.git
+    targetRevision: b44af177bc8ff4c2af795b344f80676d4f4e640e
+    ref: values
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=false
+    - FailOnSharedResource=true
