@@ -1,0 +1,12 @@
+.runtime/
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+kubeconfig*
